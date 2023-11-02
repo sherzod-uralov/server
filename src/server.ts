@@ -4,7 +4,7 @@ import { newSequlize } from "./config/sequelize";
 import { router } from "./routers/index.routes";
 import cors from 'cors'
 import path from 'path'
-import fs from 'fs'
+
 const bootstrap = async ():Promise<void> => {
     try { 
 
