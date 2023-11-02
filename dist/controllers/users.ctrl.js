@@ -7,7 +7,6 @@ const userPRofileUpdate = async (req, res) => {
     try {
         const { username } = req.body;
         const file = req.file;
-        console.log(file);
         const token = req.token;
         const openedToken = (0, jwt_helper_1.unCode)(token);
         const findUser = await users_model_1.User.findByPk(openedToken.user_id);

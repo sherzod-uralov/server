@@ -105,7 +105,7 @@ const register = async (req, res) => {
                 res.status(500).json('Email yuborishda xatolik yuz berdi.');
             }
             else {
-                await redisClient.setEx('email', 80, JSON.stringify({ verificationCode, username, password, email }));
+                await redisClient.setEx('email', 60, JSON.stringify({ verificationCode, username, password, email }));
                 return res.status(200).json({
                     status: 200,
                     msg: 'tekshiruv kodi emailingizga yuborildi!'

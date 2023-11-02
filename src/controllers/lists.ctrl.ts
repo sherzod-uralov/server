@@ -5,13 +5,13 @@ import { List_todo } from "../models/list_todo/list_todo.model";
 
 const getAllLists = async (req:Request,res:Response) => {
     try {
-        
-        const list = await List.findAll({
-            include: List_todo
-        });
         const token = (req as any).token;
 
         const openedToken = unCode(token);        
+        
+        const list = await List.findAll({ where:{user_id:(openedToken as any).user_id},
+            include: List_todo 
+        });
 
         res.status(200).json({
             status:200,

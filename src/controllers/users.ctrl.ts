@@ -9,7 +9,6 @@ const userPRofileUpdate = async (req:Request,res:Response) => {
         
         const {username} = req.body;
         const file = req.file;
-        console.log(file);
         
         
         const token = (req as any).token; 

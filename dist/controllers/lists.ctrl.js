@@ -6,11 +6,10 @@ const jwt_helper_1 = require("../helpers/jwt.helper");
 const list_todo_model_1 = require("../models/list_todo/list_todo.model");
 const getAllLists = async (req, res) => {
     try {
-        const list = await list_model_1.List.findAll({
-            include: list_todo_model_1.List_todo
-        });
         const token = req.token;
         const openedToken = (0, jwt_helper_1.unCode)(token);
+        const list = await list_model_1.List.findAll({ where: { user_id: openedToken.user_id },
+            include: list_todo_model_1.List_todo });
         res.status(200).json({
             status: 200,
             msg: 'OK',
