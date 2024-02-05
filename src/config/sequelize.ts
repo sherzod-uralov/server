@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 
-const newSequlize = new Sequelize('postgres://microsoft_user:Uy7cdmeZuKuCM19AHiiUHsFOYEfIGSwo@dpg-cl23460310os73e1eao0-a.oregon-postgres.render.com/microsoft',{
+const newSequlize = new Sequelize('postgres://postgres1:QYkMAro0nbQIdU0n36UTJvRixC9X4Bdt@dpg-cn0gaaol5elc73ejil40-a.oregon-postgres.render.com/shop_d311',{
     dialect: 'postgres',
     protocol: 'postgres',
     logging:false,  
